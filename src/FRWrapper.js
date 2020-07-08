@@ -53,6 +53,7 @@ const Wrapper = ({
   const _schema = combineSchema(schema.propsSchema, schema.uiSchema);
   const flatten = flattenSchema(_schema);
   const flattenWithData = dataToFlatten(flatten, formData);
+  // console.log(flatten);
 
   const onFlattenChange = newFlatten => {
     const newSchema = idToSchema(newFlatten);
@@ -156,28 +157,28 @@ const Wrapper = ({
     <Ctx.Provider value={setState}>
       <PropsCtx.Provider value={globalProps}>
         <InnerCtx.Provider value={store}>
-          <div className='flex vh-100 overflow-hidden'>
+          <div className="flex vh-100 overflow-hidden">
             <Left saveList={saveList} setSaveList={setSaveList} />
-            <div className='mid-layout pr2'>
-              <div className='mv3 mh1'>
+            <div className="mid-layout pr2">
+              <div className="mv3 mh1">
                 <Button
-                  className='mr2'
+                  className="mr2"
                   onClick={() => {
                     setState({ preview: !preview, selected: '#' });
                   }}
                 >
                   {preview ? '开始编辑' : '最终展示'}
                 </Button>
-                <Button className='mr2' onClick={clearSchema}>
+                <Button className="mr2" onClick={clearSchema}>
                   清空
                 </Button>
-                <Button className='mr2' onClick={toggleModal3}>
+                <Button className="mr2" onClick={toggleModal3}>
                   保存
                 </Button>
-                <Button className='mr2' onClick={toggleModal2}>
+                <Button className="mr2" onClick={toggleModal2}>
                   导入
                 </Button>
-                <Button type='primary' className='mr2' onClick={toggleModal}>
+                <Button type="primary" className="mr2" onClick={toggleModal}>
                   导出schema
                 </Button>
               </div>
@@ -188,10 +189,10 @@ const Wrapper = ({
               visible={local.showModal}
               onOk={copySchema}
               onCancel={toggleModal}
-              okText='复制'
-              cancelText='取消'
+              okText="复制"
+              cancelText="取消"
             >
-              <div className='mt3'>
+              <div className="mt3">
                 <TextArea
                   style={{ fontSize: 12 }}
                   value={displaySchemaString}
@@ -201,16 +202,16 @@ const Wrapper = ({
             </Modal>
             <Modal
               visible={local.showModal2}
-              okText='导入'
-              cancelText='取消'
+              okText="导入"
+              cancelText="取消"
               onOk={importSchema}
               onCancel={toggleModal2}
             >
-              <div className='mt3'>
+              <div className="mt3">
                 <TextArea
                   style={{ fontSize: 12 }}
                   value={local.schemaForImport}
-                  placeholder='贴入需要导入的schema，模样可点击导出schema参考'
+                  placeholder="贴入需要导入的schema，模样可点击导出schema参考"
                   onChange={onTextareaChange}
                   autoSize={{ minRows: 10, maxRows: 30 }}
                 />
@@ -218,12 +219,12 @@ const Wrapper = ({
             </Modal>
             <Modal
               visible={local.showModal3}
-              okText='确定'
-              cancelText='取消'
+              okText="确定"
+              cancelText="取消"
               onOk={saveSchema}
               onCancel={toggleModal3}
             >
-              <div className='mt4 flex items-center'>
+              <div className="mt4 flex items-center">
                 <div style={{ width: 100 }}>保存名称：</div>
                 <div style={{ width: 280 }}>
                   <Input

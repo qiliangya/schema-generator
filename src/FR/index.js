@@ -111,7 +111,7 @@ const FR = ({ id = '#', preview = false }) => {
         <div
           className={`${containerClass} h-100 f5 black-40 flex items-center justify-center`}
         >
-          点击左侧栏的组件进行添加
+          点击/拖拽左侧栏的组件进行添加
         </div>
       </Wrapper>
     );
@@ -123,7 +123,7 @@ const FR = ({ id = '#', preview = false }) => {
         <RenderField {...fieldProps}>
           {(isObj || isList) && (
             <Wrapper $id={id} item={item} inside>
-              {childrenElement || <div className='h2' />}
+              {childrenElement || <div className="h2" />}
             </Wrapper>
           )}
         </RenderField>

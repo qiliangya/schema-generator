@@ -39,6 +39,8 @@ const commonSettings = {
   },
 };
 
+// widget 用于schema中每个元素对应的右侧配置知道用哪个setting
+
 const elements = [
   {
     text: '输入框',
